@@ -28,8 +28,9 @@ public class User implements Serializable{
 	private String phone;
 	private String password;
 	
+	
 	@OneToMany(mappedBy = "client")
-	private List<Order> orders = new ArrayList<>();
+	private List<Order> orders = new ArrayList<Order>();
 	
 	public User() {
 		
@@ -82,6 +83,7 @@ public class User implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
 	
 	public List<Order> getOrder(){
 		return orders;
