@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -85,17 +87,11 @@ public class User implements Serializable{
 	}
 	
 	
+	@JsonIgnore
 	public List<Order> getOrder(){
 		return orders;
 	}
 	
-	public void addOrder(Order order) {
-		orders.add(order);
-	}
-
-	public void removeOrder(Order order) {
-		orders.remove(order);
-	}
 	
 	@Override
 	public int hashCode() {
