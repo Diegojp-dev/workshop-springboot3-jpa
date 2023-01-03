@@ -50,7 +50,7 @@ public class UserService {
 	public User update(Long id,User obj) {
 		try {
 			User entity = repository.getReferenceById(id);
-			updadeData(entity,obj);
+			updateData(entity,obj);
 			return repository.save(entity);
 		}
 		catch(EntityNotFoundException e) {
@@ -58,7 +58,7 @@ public class UserService {
 		}
 	}
 
-	private void updadeData(User entity, User obj) {
+	private void updateData(User entity, User obj) {
 		entity.setName(obj.getName());
 		entity.setEmail(obj.getEmail());
 		entity.setPhone(obj.getPhone());		
